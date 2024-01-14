@@ -60,8 +60,9 @@ def create_company():
     return TransportCompany(name)
 
 
-def create_vehicle():
-    return
+def create_vehicle(company):
+    model = input("Введите модель транспорта: ")
+    return Vehicle(model, company)
 
 
 def create_driver():
@@ -89,7 +90,12 @@ def menu():
             company = create_company()
             print("Фирма создана")
         elif point == "2":
-            pass
+            if company:
+                vehicle = create_vehicle(company)
+                company.add_vehicle(vehicle)
+                print("Транспорт создан")
+            else:
+                print("Сначала создайте фирму")
         elif point == "3":
             pass
         elif point == "4":
