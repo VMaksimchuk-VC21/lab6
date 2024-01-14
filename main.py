@@ -56,7 +56,8 @@ class Driver:
 
 
 def create_company():
-    return
+    name = input("Введите название фирмы: ")
+    return TransportCompany(name)
 
 
 def create_vehicle():
@@ -85,7 +86,8 @@ def menu():
         point = input("Выберите пункт меню: ")
 
         if point == "1":
-            pass
+            company = create_company()
+            print("Фирма создана")
         elif point == "2":
             pass
         elif point == "3":
