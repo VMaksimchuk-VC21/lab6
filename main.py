@@ -19,12 +19,28 @@ class TransportCompany:
 
 
 class Vehicle:
-    def __init__(self):
-       return
+    def __init__(self, model, company):
+        self.__model = model
+        self.__company = company
+        self.__drivers = []
 
+    @property
+    def model(self):
+        return self.__model
+
+    @property
+    def company(self):
+        return self.__company
+
+    @property
+    def drivers(self):
+        return self.__drivers
 
     def __str__(self):
-        return
+        return f"Транспорт: {self.model} ({self.company.name})"
+
+    def add_driver(self, driver):
+        self.__drivers.append(driver)
 
 
 class Driver:
