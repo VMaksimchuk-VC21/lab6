@@ -44,12 +44,15 @@ class Vehicle:
 
 
 class Driver:
-    def __init__(self):
-       return
+    def __init__(self, name):
+        self.__name = name
 
+    @property
+    def name(self):
+        return self.__name
 
     def __str__(self):
-        return
+        return f"Водитель: {self.name}"
 
 
 def create_company():
