@@ -1,9 +1,21 @@
 class TransportCompany:
-    def __init__(self):
-        return
+    def __init__(self, name):
+        self.__name = name
+        self.__vehicles = []
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def vehicles(self):
+        return self.__vehicles
 
     def __str__(self):
-        return
+        return f"Фирма: {self.name}"
+
+    def add_vehicle(self, vehicle):
+        self.__vehicles.append(vehicle)
 
 
 class Vehicle:
