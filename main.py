@@ -66,7 +66,8 @@ def create_vehicle(company):
 
 
 def create_driver():
-    return
+    name = input("Введите имя водителя: ")
+    return Driver(name)
 
 
 def menu():
@@ -97,7 +98,12 @@ def menu():
             else:
                 print("Сначала создайте фирму")
         elif point == "3":
-            pass
+            if vehicle:
+                driver = create_driver()
+                vehicle.add_driver(driver)
+                print("Водитель создан")
+            else:
+                print("Сначала создайте транспорт")
         elif point == "4":
             pass
         elif point == "5":
